@@ -61,13 +61,12 @@ const padelTemplate = `
 </head>
 <body>
     <div class="container">
-        <h1>Pistas Disponibles - PadelSpirit Club</h1>
+        <h1>Pistas Disponibles</h1>
         <div id="content">
           {{data}}
         </div>
         <div class="footer">
             <p>Playtomic - ¡Reserva tu pista ahora!</p>
-            <p>Precios sujetos a disponibilidad</p>
             <p>Este email se ha generado automáticamente gracias a Escubot</p>
         </div>
     </div>
@@ -76,18 +75,18 @@ const padelTemplate = `
 `
 
 const slotsHTML = (datos) => datos.map(slot => {
-  return `
+    return `
     <div class="date-section">
       <h2>${slot.date} - ${slot.center}</h2>
       ${slot.freeSlots.map(freeSlot => {
-    return `
+        return `
           <div class="slot">
             <p class="court">${freeSlot.court}</p>
             <p class="time">${freeSlot.time}</p>
             <p class="price">${freeSlot.duration} - ${freeSlot.price}</p>
           </div>
         `
-  }).join('')}
+    }).join('')}
     </div>
   `
 })
