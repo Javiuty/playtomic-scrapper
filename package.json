@@ -6,12 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Javiuty",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.4.7",
+    "dotenv": "16.4.7",
     "puppeteer": "24.2.1",
     "resend": "4.1.2"
+  },
+  "devDependencies": {
+    "eslint": "8.57.1",
+    "standard": "17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
   }
 }
