@@ -1,10 +1,9 @@
-import { Resend } from "resend";
-import { html } from "./templates.js";
-import 'dotenv/config';
+import { Resend } from 'resend'
+import { html } from './templates.js'
+import 'dotenv/config'
 
-
-export async function sendEmail(datos) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+export async function sendEmail (datos) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
 
   const template = html(datos)
 
@@ -12,12 +11,12 @@ export async function sendEmail(datos) {
     from: 'Escubot <onboarding@resend.dev>',
     to: ['javiiescuadra@gmail.com'],
     subject: 'Partidos de padel disponibles',
-    html: template,
-  });
+    html: template
+  })
 
   if (error) {
-    return console.error({ error });
+    return console.error({ error })
   }
 
-  console.log('Email sent', data);
+  console.log('Email sent', data)
 }

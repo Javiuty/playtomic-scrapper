@@ -1,7 +1,6 @@
-import puppeteer from "puppeteer";
+import puppeteer from 'puppeteer'
 
-
-export async function scrape(club) {
+export async function scrape (club) {
   // Esto solo para ejecución sin navegador en local
   // const browser = await puppeteer.launch({
   //   headless: true,
@@ -40,7 +39,6 @@ export async function scrape(club) {
       }
 
       return ({ court, time, duration, price })
-
     }).filter(slot => slot.duration !== '' && slot.time > '17:30' && slot.time.length >= 5 && slot.time < '21:30')
   })
 
@@ -51,5 +49,3 @@ export async function scrape(club) {
 
   return { date: info.date, center: info.center, freeSlots }
 }
-
-

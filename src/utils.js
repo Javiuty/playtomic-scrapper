@@ -5,7 +5,7 @@ export const getDates = () => {
     const day = new Date()
     day.setDate(day.getDate() + i)
 
-    const month = day.toLocaleDateString('es-Es').split('/');
+    const month = day.toLocaleDateString('es-Es').split('/')
 
     month[0] = month[0].padStart(2, '0')
     month[1] = month[1].padStart(2, '0')

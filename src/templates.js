@@ -75,7 +75,7 @@ const padelTemplate = `
 `
 
 const slotsHTML = (datos) => datos.map(slot => {
-    return `
+  return `
     <div class="date-section">
       <h2>${slot.date} - ${slot.center}</h2>
       ${slot.freeSlots.map(freeSlot => {
