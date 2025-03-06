@@ -1,7 +1,6 @@
 import { CLUBS } from './src/constants.js'
-import { getDates } from './src/utils.js'
+import { getDates, getDayOfTheWeek } from './src/utils.js'
 import { scrape } from './src/scraper.js'
-
 import { sendEmail } from './src/mail.js'
 
 const slots = []
@@ -16,6 +15,11 @@ async function main () {
 
   // Quitamos los null y valores falsy
   const cleanSlots = slots.filter(slot => slot)
+
+  // Añadimos el día de la semana
+  cleanSlots.forEach(slot => {
+    slot.date = `${getDayOfTheWeek(slot.date)} ${slot.date}`
+  })
 
   await sendEmail(cleanSlots)
 }
